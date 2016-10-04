@@ -1,0 +1,752 @@
+ADS@PC-FPADRONE MINGW64 ~
+$ cd Document
+Documenti/ Documents/
+
+ADS@PC-FPADRONE MINGW64 ~
+$ cd Documenti
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti
+$ cd Git_test/
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ git push origin master
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ll
+total 171
+-rw-r--r-- 1 ADS 197121 130194 Sep 30 17:38 bash_history.txt
+-rw-r--r-- 1 ADS 197121    166 Sep 29 11:37 file_csv.csv
+-rw-r--r-- 1 ADS 197121     82 Oct  4 11:06 file_di_testo.txt
+-rw-r--r-- 1 ADS 197121   1482 Sep 30 11:01 gitTest_private_key.ppk
+-rw-r--r-- 1 ADS 197121    468 Oct  4 11:10 git_key
+-rw-r--r-- 1 ADS 197121   1460 Oct  4 11:10 git_key.ppk
+drwxr-xr-x 1 ADS 197121      0 Oct  3 10:30 githubTest/
+drwxr-xr-x 1 ADS 197121      0 Sep 26 10:56 mygrit/
+-rw-r--r-- 1 ADS 197121  21871 Sep 29 11:37 trasformazione.ktr
+-rw-r--r-- 1 ADS 197121      0 Oct  3 10:47 users.txt
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ cp git_key ../../
+Display all 51 possibilities? (y or n)
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ cp git_key ../../.ssh/
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ git push origin master
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ cp git_key.ppk ../../.ssh/
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ git push origin master
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ssh-agent -s
+SSH_AUTH_SOCK=/tmp/ssh-1x9GSVqGV4W4/agent.7344; export SSH_AUTH_SOCK;
+SSH_AGENT_PID=6756; export SSH_AGENT_PID;
+echo Agent pid 6756;
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ git push origin master
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ssh-add -l
+Could not open a connection to your authentication agent.
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ eval $(ssh-agent -s)
+Agent pid 3408
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ssh-add -l
+The agent has no identities.
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ssh-add git_key.ppk
+Enter passphrase for git_key.ppk:
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ssh-add -l
+The agent has no identities.
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ssh-add -l -E md5
+The agent has no identities.
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ exec ssh-agent bash
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ssh-add git_key.ppk
+Enter passphrase for git_key.ppk:
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ssh-add -l -E md5
+The agent has no identities.
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ssh-add -l
+The agent has no identities.
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ssh 10.194.139.34
+ADS@10.194.139.34's password:
+
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ssh root@10.194.139.34
+root@10.194.139.34's password:
+Last login: Tue Oct  4 10:35:45 2016 from 10.194.139.38
+[root@localhost ~]# ll
+totale 135228
+-rw-------.  1 root   root         954  1 mar  2016 anaconda-ks.cfg
+drwxr-xr-x.  2 root   root        4096 21 lug 14:09 Documenti
+drwxr-xr-x. 22 root   root       12288 30 set 10:29 git
+drwxr-xr-x.  2 root   root        4096 30 set 11:09 gitrepos
+drwxr-xr-x.  2 root   root        4096 21 lug 14:09 Immagini
+-rw-r--r--.  1 root   root        1408  8 set 08:29 ip.txt
+drwxrwxrwx.  2 root   root        4096 28 giu 15:39 jarxml
+drwxr-xr-x.  2 root   root        4096 21 lug 14:09 Modelli
+drwxr-xr-x.  6 197608 197121      4096 28 giu 15:39 moshell
+-rw-r--r--.  1 root   root    33090885 28 giu 15:30 moshell16.0n.zip
+-rw-r--r--.  1 root   root       31795 15 giu 07:05 moshell_install
+drwxrwxrwx.  3 root   root        4096  7 apr 13:20 moshell_logfiles
+-rw-rw-rw-.  1 root   root   105246720 15 giu 07:38 moshell.tar
+drwxr-xr-x.  2 root   root        4096 21 lug 14:09 Musica
+-rw-r--r--.  1 root   root        1679  8 set 13:21 openshift_quik
+-rw-r--r--.  1 root   root         412  8 set 13:21 openshift_quik.pub
+-rw-r--r--.  1 root   root       12274  7 ago  2015 post-install
+-rw-r--r--.  1 root   root         552  7 ago  2015 post-install.log
+drwxr-xr-x.  2 root   root        4096 21 lug 14:09 Pubblici
+-rw-r--r--.  1 root   root        1679  9 set 17:27 root@141.137.155.119
+drwxr-xr-x.  2 root   root        4096 21 lug 14:09 Scaricati
+drwxr-xr-x.  2 root   root        4096 21 lug 14:09 Scrivania
+drwxr-xr-x.  2 root   root        4096 21 lug 14:09 Video
+[root@localhost ~]# git
+usage: git [--version] [--exec-path[=GIT_EXEC_PATH]] [--html-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects]
+           [--bare] [--git-dir=GIT_DIR] [--work-tree=GIT_WORK_TREE]
+           [--help] COMMAND [ARGS]
+
+The most commonly used git commands are:
+   add        Add file contents to the index
+   bisect     Find by binary search the change that introduced a bug
+   branch     List, create, or delete branches
+   checkout   Checkout a branch or paths to the working tree
+   clone      Clone a repository into a new directory
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   fetch      Download objects and refs from another repository
+   grep       Print lines matching a pattern
+   init       Create an empty git repository or reinitialize an existing one
+   log        Show commit logs
+   merge      Join two or more development histories together
+   mv         Move or rename a file, a directory, or a symlink
+   pull       Fetch from and merge with another repository or a local branch
+   push       Update remote refs along with associated objects
+   rebase     Forward-port local commits to the updated upstream head
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+   show       Show various types of objects
+   status     Show the working tree status
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+See 'git help COMMAND' for more information on a specific command.
+[root@localhost ~]# ls
+anaconda-ks.cfg  git       Immagini  jarxml   moshell           moshell_install   moshell.tar  openshift_quik      post-install      Pubblici              Scaricati  Video
+Documenti        gitrepos  ip.txt    Modelli  moshell16.0n.zip  moshell_logfiles  Musica       openshift_quik.pub  post-install.log  root@141.137.155.119  Scrivania
+[root@localhost ~]# mkdir gitTest
+[root@localhost ~]# ll
+totale 135232
+-rw-------.  1 root   root         954  1 mar  2016 anaconda-ks.cfg
+drwxr-xr-x.  2 root   root        4096 21 lug 14:09 Documenti
+drwxr-xr-x. 22 root   root       12288 30 set 10:29 git
+drwxr-xr-x.  2 root   root        4096 30 set 11:09 gitrepos
+drwxr-xr-x.  2 root   root        4096  4 ott 11:20 gitTest
+drwxr-xr-x.  2 root   root        4096 21 lug 14:09 Immagini
+-rw-r--r--.  1 root   root        1408  8 set 08:29 ip.txt
+drwxrwxrwx.  2 root   root        4096 28 giu 15:39 jarxml
+drwxr-xr-x.  2 root   root        4096 21 lug 14:09 Modelli
+drwxr-xr-x.  6 197608 197121      4096 28 giu 15:39 moshell
+-rw-r--r--.  1 root   root    33090885 28 giu 15:30 moshell16.0n.zip
+-rw-r--r--.  1 root   root       31795 15 giu 07:05 moshell_install
+drwxrwxrwx.  3 root   root        4096  7 apr 13:20 moshell_logfiles
+-rw-rw-rw-.  1 root   root   105246720 15 giu 07:38 moshell.tar
+drwxr-xr-x.  2 root   root        4096 21 lug 14:09 Musica
+-rw-r--r--.  1 root   root        1679  8 set 13:21 openshift_quik
+-rw-r--r--.  1 root   root         412  8 set 13:21 openshift_quik.pub
+-rw-r--r--.  1 root   root       12274  7 ago  2015 post-install
+-rw-r--r--.  1 root   root         552  7 ago  2015 post-install.log
+drwxr-xr-x.  2 root   root        4096 21 lug 14:09 Pubblici
+-rw-r--r--.  1 root   root        1679  9 set 17:27 root@141.137.155.119
+drwxr-xr-x.  2 root   root        4096 21 lug 14:09 Scaricati
+drwxr-xr-x.  2 root   root        4096 21 lug 14:09 Scrivania
+drwxr-xr-x.  2 root   root        4096 21 lug 14:09 Video
+[root@localhost ~]# cd gitTest/
+[root@localhost gitTest]# ls
+[root@localhost gitTest]# ssh-key
+ssh-keygen   ssh-keyscan
+[root@localhost gitTest]# ssh-key
+ssh-keygen   ssh-keyscan
+[root@localhost gitTest]# ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+5d:5e:aa:7e:a7:55:b2:e2:bb:cc:1f:8a:a2:71:30:81 root@localhost.localdomain
+The key's randomart image is:
++--[ RSA 2048]----+
+|                 |
+|     .           |
+|    E .     . .  |
+|       . . o o   |
+|      o S . o . .|
+|       o   .   + |
+|      . . . . +  |
+|       o.. =.+.. |
+|      .. .o.O*.  |
++-----------------+
+[root@localhost gitTest]# cat ../.
+./               .bash_logout     .cache/          .dbus/           .gconfd/         .gnome2_private/ .ICEauthority    .mysql_history   .pulse/          .tcshrc
+../              .bash_profile    .config/         .esd_auth        .gitconfig       .gtk-bookmarks   .local/          .nautilus/       .pulse-cookie    .viminfo
+.bash_history    .bashrc          .cshrc           .gconf/          .gnome2/         .gvfs/           .moshellrc       .pki/            .ssh/
+[root@localhost gitTest]# cat ../.ssh/id_rsa
+id_rsa      id_rsa.pub
+[root@localhost gitTest]# cat ../.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAxEJufHJaN9+oxr4p9E7sG6eSZ0xkc0V7uflACSRN86t+swHxTYR2TFwu+k3zzX6q7vm38dJlFrisFb/gFzFyzBDGocmZ5d6WQdWqmX1U/9FobSWgsV46ZFH64l5ShM0Crj2XxPmMDeSvAwCBxfCGK41boEuMXPD/JfB4/xGwfVYIKzCbe0M3/Q9nOa3+zzZ+EOzKRizG890A/4B9H++RSnq/w/IblYyv3E5WVyAS2FzzkgBHASVQIZYacgKw69SLy/+PQ/DDiLEMWGjbQwir3p0qhLPem37BqFyqxUSCH/AHjPy+YCRYgJh1fiGrR6ZCOTb4Y4jzAKWgPU5PB/fmYQ== root@localhost.localdomain
+[root@localhost gitTest]# ssh-add ../.ssh/
+id_rsa       id_rsa.pub   known_hosts
+[root@localhost gitTest]# ssh-add ../.ssh/id_rsa
+Could not open a connection to your authentication agent.
+[root@localhost gitTest]# eval 'ssh-agent -s'
+SSH_AUTH_SOCK=/tmp/ssh-sfnjc23355/agent.23355; export SSH_AUTH_SOCK;
+SSH_AGENT_PID=23356; export SSH_AGENT_PID;
+echo Agent pid 23356;
+[root@localhost gitTest]# ssh-add ../.ssh/id_rsa
+Could not open a connection to your authentication agent.
+[root@localhost gitTest]# eval `ssh-agent -s`
+Agent pid 23359
+[root@localhost gitTest]# ssh-add ../.ssh/id_rsa
+Identity added: ../.ssh/id_rsa (../.ssh/id_rsa)
+[root@localhost gitTest]# ssh-add -l
+2048 5d:5e:aa:7e:a7:55:b2:e2:bb:cc:1f:8a:a2:71:30:81 ../.ssh/id_rsa (RSA)
+[root@localhost gitTest]# git initi
+git: 'initi' is not a git command. See 'git --help'.
+
+Did you mean one of these?
+        init
+        init-db
+[root@localhost gitTest]# git init
+Initialized empty Git repository in /root/gitTest/.git/
+[root@localhost gitTest]# touch test
+[root@localhost gitTest]# ls
+test
+[root@localhost gitTest]# git add *
+[root@localhost gitTest]# git commit -m "message"
+[master (root-commit) 7ad15b9] message
+ Committer: root <root@localhost.localdomain>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 0 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test
+[root@localhost gitTest]# ^C
+[root@localhost gitTest]# git config --global user.name "polyfemo"
+[root@localhost gitTest]# git config --global user.email "polyfemo@h3g.it"
+[root@localhost gitTest]# git commit -m "message"
+# On branch master
+nothing to commit (working directory clean)
+[root@localhost gitTest]# touch test2
+[root@localhost gitTest]# git add *
+[root@localhost gitTest]# git commit -m "message"
+[master 9017410] message
+ 0 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test2
+[root@localhost gitTest]# git remote add origin
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror              no separate remotes
+
+[root@localhost gitTest]# git remote add origin git@github.com:federicopad/gitTest.git
+[root@localhost gitTest]# git push origin master
+The authenticity of host 'github.com (192.30.253.112)' can't be established.
+RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of known hosts.
+To git@github.com:federicopad/gitTest.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:federicopad/gitTest.git'
+To prevent you from losing history, non-fast-forward updates were rejected
+Merge the remote changes before pushing again.  See the 'Note about
+fast-forwards' section of 'git push --help' for details.
+[root@localhost gitTest]# git push origin master^C
+[root@localhost gitTest]# git fetch
+warning: no common commits
+remote: Counting objects: 7, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 7 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (7/7), done.
+From github.com:federicopad/gitTest
+ * [new branch]      master     -> origin/master
+[root@localhost gitTest]# ll
+totale 0
+-rw-r--r--. 1 root root 0  4 ott 11:22 test
+-rw-r--r--. 1 root root 0  4 ott 11:24 test2
+[root@localhost gitTest]# git push origin master
+To git@github.com:federicopad/gitTest.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:federicopad/gitTest.git'
+To prevent you from losing history, non-fast-forward updates were rejected
+Merge the remote changes before pushing again.  See the 'Note about
+fast-forwards' section of 'git push --help' for details.
+[root@localhost gitTest]# git pull
+You asked me to pull without telling me which branch you
+want to merge with, and 'branch.master.merge' in
+your configuration file does not tell me, either. Please
+specify which branch you want to use on the command line and
+try again (e.g. 'git pull <repository> <refspec>').
+See git-pull(1) for details.
+
+If you often merge with the same branch, you may want to
+use something like the following in your configuration file:
+
+    [branch "master"]
+    remote = <nickname>
+    merge = <remote-ref>
+
+    [remote "<nickname>"]
+    url = <url>
+    fetch = <refspec>
+
+See git-config(1) for details.
+[root@localhost gitTest]# git pull origin
+You asked to pull from the remote 'origin', but did not specify
+a branch. Because this is not the default configured remote
+for your current branch, you must specify a branch on the command line.
+[root@localhost gitTest]# git pull master
+fatal: 'master' does not appear to be a git repository
+fatal: The remote end hung up unexpectedly
+[root@localhost gitTest]# cat ../.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAxEJufHJaN9+oxr4p9E7sG6eSZ0xkc0V7uflACSRN86t+swHxTYR2TFwu+k3zzX6q7vm38dJlFrisFb/gFzFyzBDGocmZ5d6WQdWqmX1U/9FobSWgsV46ZFH64l5ShM0Crj2XxPmMDeSvAwCBxfCGK41boEuMXPD/JfB4/xGwfVYIKzCbe0M3/Q9nOa3+zzZ+EOzKRizG890A/4B9H++RSnq/w/IblYyv3E5WVyAS2FzzkgBHASVQIZYacgKw69SLy/+PQ/DDiLEMWGjbQwir3p0qhLPem37BqFyqxUSCH/AHjPy+YCRYgJh1fiGrR6ZCOTb4Y4jzAKWgPU5PB/fmYQ== root@localhost.localdomain
+[root@localhost gitTest]# git pull master^C
+[root@localhost gitTest]# rm *
+rm: rimuovere regular empty file `test'? y
+rm: rimuovere regular empty file `test2'? y
+[root@localhost gitTest]# ls
+[root@localhost gitTest]# git pull
+You asked me to pull without telling me which branch you
+want to merge with, and 'branch.master.merge' in
+your configuration file does not tell me, either. Please
+specify which branch you want to use on the command line and
+try again (e.g. 'git pull <repository> <refspec>').
+See git-pull(1) for details.
+
+If you often merge with the same branch, you may want to
+use something like the following in your configuration file:
+
+    [branch "master"]
+    remote = <nickname>
+    merge = <remote-ref>
+
+    [remote "<nickname>"]
+    url = <url>
+    fetch = <refspec>
+
+See git-config(1) for details.
+[root@localhost gitTest]# ls
+[root@localhost gitTest]# cd ..
+[root@localhost ~]# rm -rf gitTest/
+[root@localhost ~]# cd gitrepos/
+[root@localhost gitrepos]# ls
+[root@localhost gitrepos]# git init
+Initialized empty Git repository in /root/gitrepos/.git/
+[root@localhost gitrepos]# git remote add origin git@github.com:federicopad/gitTest.git
+[root@localhost gitrepos]# git pull
+remote: Counting objects: 7, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 7 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (7/7), done.
+From github.com:federicopad/gitTest
+ * [new branch]      master     -> origin/master
+You asked me to pull without telling me which branch you
+want to merge with, and 'branch.master.merge' in
+your configuration file does not tell me, either. Please
+specify which branch you want to use on the command line and
+try again (e.g. 'git pull <repository> <refspec>').
+See git-pull(1) for details.
+
+If you often merge with the same branch, you may want to
+use something like the following in your configuration file:
+
+    [branch "master"]
+    remote = <nickname>
+    merge = <remote-ref>
+
+    [remote "<nickname>"]
+    url = <url>
+    fetch = <refspec>
+
+See git-config(1) for details.
+[root@localhost gitrepos]# git pull master master
+fatal: 'master' does not appear to be a git repository
+fatal: The remote end hung up unexpectedly
+[root@localhost gitrepos]# git pull origin master
+From github.com:federicopad/gitTest
+ * branch            master     -> FETCH_HEAD
+[root@localhost gitrepos]# ll
+totale 4
+-rw-r--r--. 1 root root 82  4 ott 11:29 README.md
+[root@localhost gitrepos]# touch test
+[root@localhost gitrepos]# git add *
+[root@localhost gitrepos]# git commit -m "basta"
+[master 2b9865f] basta
+ 0 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test
+[root@localhost gitrepos]# git push
+Counting objects: 4, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 261 bytes, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:federicopad/gitTest.git
+   cf900c1..2b9865f  master -> master
+[root@localhost gitrepos]# exit
+logout
+Connection to 10.194.139.34 closed.
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ssh-add -l
+The agent has no identities.
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ls
+bash_history.txt  file_csv.csv  file_di_testo.txt  gitTest_private_key.ppk  git_key  git_key.ppk  githubTest  mygrit  trasformazione.ktr  users.txt
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/ADS/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/ADS/.ssh/id_rsa.
+Your public key has been saved in /c/Users/ADS/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:MBJbJMCeq6xpVYP3H8Y0ltDBcfRXckovGEdRxwHU0Iw ADS@PC-FPADRONE
+The key's randomart image is:
++---[RSA 2048]----+
+| ...o.o oo+oo=&=*|
+|  .  = . o. .E O+|
+| . .+ o . . ..o..|
+|  o. = o =    .. |
+|   .o o S .      |
+|  ..   . +       |
+|...     o .      |
+|.+       .       |
+|=                |
++----[SHA256]-----+
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ cat ../../.ssh/id_rsa
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEApFQLETcZJhPJ09zRDY1Fq6GE8G8Ez5JL4p41HLHyQk+UmRwI
+8rsCPijrhsxx5KDaEnBHlkygivoEpUPYqM+5GSGrHmN79bvXzYDY5zeu640/04WN
+QRBwqPbZmxKONAgm+bSF5HJVl92euHhbbhCyD8v+lnw4v917i8JH6Vj6VTw1Qdw3
+o+oF7rU/UrQ+Uk1UcHthEj01L0L80PA1wpwDs5MQsqcVp73kDZ24c+7M21EV4yQ7
+Vg4ifRMDN5yZuiCggYfyu1WdAKZC7DSywJwG0ndmMCXYHu3yWjZV/Z81yz3UefdJ
+hvV49qmoSjWPV2LMmTTNXL43ygNfK/lKSh/WMQIDAQABAoIBAQCM1XZyt5z3FEiK
+KZqFGclXEeOkSBGAcCpXOy3bvOoaSKfbHLrShNGkQl+wtHD795tN6CqCNoP099eZ
+Z+88pmJFlqRYM/zeGrIV7tJ2PzPLrs+/0ZrA430aYg0XKSz0jPQSV9PUeOTAdfB8
+urHpP6fLgBJeGHJuhTxICCanZ1mMR+Dqnjgg2WZ4AB6TJlLNnSE5Nd6qzmzIF5AA
+Q5+MuIrfE+RWhVGccg2S3iP0RWYG5heImwDsrAZdRpDZeGWkCFQRi+QGbTO0frQm
+1dslO/5ex5mlf2BCOpeTtAKPBNFFhzTuRQVSWQ+G8C4GDrQS6UYPKx4zM2TFHmyC
+SnuaSXktAoGBAM9VaEK2gJmAy2/jEpd5uWT5G79LDDxAm/LJO/GUnRYJ47Gw+AYu
+v1UPiGB/X5rP8J7NJJGLwFOp2yXF4o084SnGh+CIyxPGzHllIVI+nfedX2LJoDNF
+LyYB050MX/UQksRQCeeknRD8BbRLQ06+FjSoIPOdZL/TnZGEQWhtLXqzAoGBAMrm
+dp14p+ajBL/BgRvnu6TfBwc1rD7aBaxRNJ7TCN7xWCxafFhEVIFu7XacBGhzMdYn
+mBMrPX/zSZgskKUXv+TgLuxMLY46MNIaYDVhkT0BbSIsrtkP+HcAw1tCriOd38po
+kgW7bcTx/IfAMNExga3EZXF7HtreqNnOwZYeEG2LAoGANINGR/dfdQGpBSq3L8R1
+z3xEqdvBOpWGqiSL2TEx5D4W/I99ElvOvCWV/hLkzRozsJT22SJTUR1pUxTev7UW
+tnUBPz6GaPjmGy0hFmqjqe6jFStKNxIj0fWOem2C9FgBRFWdXJ1V5tJeQ374ij4c
+87NNvUY1GVzowM2Fn4Rfi38CgYEAj/vp0qerpoyqsxUzdMUGsOIgD6qz98op2nWp
+/MdPdT4ZTyhLMywSN+OrGc9vhVux0wI39epqcyEHabi+UJnA8D9yrPcGIPcEbCSR
+f3AkbAFWG7lPvvOJY5GkEGAKSXYgOHfqn6y5IdiDVyY4vkr+dnx3bIdthu4ZLq99
+SvU8vS8CgYEAmddouGS9dVATPSjzHiisW51bP2RjlO3UMf15wN8h55v84rzyQMa6
+ul8yQTGFrHpXKNBjNgmoQN5AqFV+zl7OWFWofrrZiXPZa6lW/cxHHTdHH1l/Alhb
+aa1mRe6GyT7lyzI+fR6g6ZQC9BZlb2kCBBtvWWtgroJZ4USO5Fl/w5Q=
+-----END RSA PRIVATE KEY-----
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ cat ../../.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCkVAsRNxkmE8nT3NENjUWroYTwbwTPkkvinjUcsfJCT5SZHAjyuwI+KOuGzHHkoNoScEeWTKCK+gSlQ9ioz7kZIaseY3v1u9fNgNjnN67rjT/ThY1BEHCo9tmbEo40CCb5tIXkclWX3Z64eFtuELIPy/6WfDi/3XuLwkfpWPpVPDVB3Dej6gXutT9StD5STVRwe2ESPTUvQvzQ8DXCnAOzkxCypxWnveQNnbhz7szbURXjJDtWDiJ9EwM3nJm6IKCBh/K7VZ0ApkLsNLLAnAbSd2YwJdge7fJaNlX9nzXLPdR590mG9Xj2qahKNY9XYsyZNM1cvjfKA18r+UpKH9Yx ADS@PC-FPADRONE
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ls
+bash_history.txt  file_csv.csv  file_di_testo.txt  gitTest_private_key.ppk  git_key  git_key.ppk  githubTest  mygrit  trasformazione.ktr  users.txt
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ git init
+Reinitialized existing Git repository in C:/Users/ADS/Documenti/Git_test/.git/
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ssh-add ../../.ssh/id_rsa
+Identity added: ../../.ssh/id_rsa (../../.ssh/id_rsa)
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ssh-add -l
+2048 SHA256:MBJbJMCeq6xpVYP3H8Y0ltDBcfRXckovGEdRxwHU0Iw ../../.ssh/id_rsa (RSA)
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ git rebase origin
+fatal: Needed a single revision
+invalid upstream origin
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ git push origin master
+To github.com:federicopad/gitTest.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@github.com:federicopad/gitTest.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ git fetch
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:federicopad/gitTest
+ * [new branch]      master     -> origin/master
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ll
+bash: ll: command not found
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ls
+bash_history.txt  file_csv.csv  file_di_testo.txt  gitTest_private_key.ppk  git_key  git_key.ppk  githubTest  mygrit  trasformazione.ktr  users.txt
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ git push origin master
+To github.com:federicopad/gitTest.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:federicopad/gitTest.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=<remote>/<branch> master
+
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ git pull origin master
+From github.com:federicopad/gitTest
+ * branch            master     -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ls
+bash_history.txt  file_csv.csv  file_di_testo.txt  gitTest_private_key.ppk  git_key  git_key.ppk  githubTest  mygrit  trasformazione.ktr  users.txt
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ rm -rf *
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ll
+bash: ll: command not found
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ ls
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/Git_test (master)
+$ cd ..
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti
+$ rm -rf Git_test/
+
+
+
+
+
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti
+$
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti
+$
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti
+$
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti
+$
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti
+$
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti
+$
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti
+$ mkdir github
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti
+$ cd github/
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/github
+$ git init
+Initialized empty Git repository in C:/Users/ADS/Documenti/github/.git/
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/github (master)
+$ git remote add origin git@github.com:federicopad/gitTest.git
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/github (master)
+$ ls
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/github (master)
+$ git pull origin master
+remote: Counting objects: 10, done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 10 (delta 1), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (10/10), done.
+From github.com:federicopad/gitTest
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/github (master)
+$ ls
+README.md  test
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/github (master)
+$ touch local
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/github (master)
+$ git add *
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/github (master)
+$ git commit -m "daje"
+[master 8d2abd9] daje
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 local
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/github (master)
+$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/github (master)
+$ git push -u
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/github (master)
+$   git push --set-upstream origin master
+
+Counting objects: 2, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 274 bytes | 0 bytes/s, done.
+Total 2 (delta 0), reused 0 (delta 0)
+To github.com:federicopad/gitTest.git
+   2b9865f..8d2abd9  master -> master
+Branch master set up to track remote branch master from origin.
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/github (master)
+$
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/github (master)
+$ ls
+README.md  local  test
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/github (master)
+$ touch local2
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/github (master)
+$ git push
+Everything up-to-date
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/github (master)
+$ git add *
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/github (master)
+$ git commit -m "test"
+[master 74d4894] test
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 local2
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/github (master)
+$ git push
+Counting objects: 2, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 231 bytes | 0 bytes/s, done.
+Total 2 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To github.com:federicopad/gitTest.git
+   8d2abd9..74d4894  master -> master
+
+ADS@PC-FPADRONE MINGW64 ~/Documenti/github (master)
+$
